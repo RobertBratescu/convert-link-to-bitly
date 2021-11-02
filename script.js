@@ -27,7 +27,7 @@ function checkMinimumValues() {
 }
 //Connection to API
 const userUID = "Bj4hdnemRdp";
-const bitlyAPIToken = secrets.API_KEY;
+const bitlyAPIToken = "46b4cd1c323b57f7a324a178d1423bd9d38c8df0";
 //Declaring the function that starts the API
 function startFetch() {
   if (checkMinimumValues()) {
