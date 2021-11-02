@@ -44,7 +44,7 @@ function startFetch() {
         console.log(`${json.id} has been generated successfully!`);
         // Copy to clipboard function
         function copyToClipboard() {
-          displayBitlyLink.classList.add("green ");
+          displayBitlyLink.classList.add("green");
           /* Copy the text inside the text field */
           navigator.clipboard.writeText(json.id);
           console.log(`${json.id} copied to clipboard`);
@@ -76,8 +76,9 @@ function composeLongLink() {
   let nameVal = cmpNameEl.value ? "&" + "utm_campaign=" + cmpNameEl.value : "";
   let termVal = cmpTermEl.value ? "&" + "utm_term=" + cmpTermEl.value : "";
   let contentVal = cmpContentEl.value ? "&" + "utm_content=" + cmpContentEl.value : "";
+  let hasParams = idVal || sourceVal || mediumVal || nameVal || termVal || contentVal ? true : false;
   //Form the final link
-  theURLel.textContent = `${longLinkEl.value}${!includesQ ? "?" : ""}${sourceVal}${mediumVal}${nameVal}${idVal}${termVal}${contentVal}`.replace("?&", "?");
+  theURLel.textContent = `${longLinkEl.value}${!includesQ && hasParams ? "?" : ""}${sourceVal}${mediumVal}${nameVal}${idVal}${termVal}${contentVal}`.replace("?&", "?");
 }
 
 //Add event listeners to each input element
