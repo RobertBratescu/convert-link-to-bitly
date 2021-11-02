@@ -1,5 +1,6 @@
 "use strict";
 let includesQ;
+require("dotenv").config();
 //Declaring the elements
 const theURLel = document.getElementById("final-utm-link");
 const displayBitlyLink = document.getElementById("display-new-bitly");
@@ -26,7 +27,7 @@ function checkMinimumValues() {
 }
 //Connection to API
 const userUID = "Bj4hdnemRdp";
-const bitlyAPIToken = "46b4cd1c323b57f7a324a178d1423bd9d38c8df0";
+const bitlyAPIToken = process.env.API_KEY;
 //Declaring the function that starts the API
 function startFetch() {
   if (checkMinimumValues()) {
