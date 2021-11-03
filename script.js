@@ -71,12 +71,12 @@ function composeLongLink() {
   // Check if longLinkEl has "?"
   includesQ = longLinkEl.value.includes("?") ? true : false;
   //Declare value variables
-  let idVal = cmpIdEl.value ? "&" + "utm_id=" + cmpIdEl.value : "";
-  let sourceVal = cmpSourceEl.value ? "&" + "utm_source=" + cmpSourceEl.value : "";
-  let mediumVal = cmpMediumEl.value ? "&" + "utm_medium=" + cmpMediumEl.value : "";
-  let nameVal = cmpNameEl.value ? "&" + "utm_campaign=" + cmpNameEl.value : "";
-  let termVal = cmpTermEl.value ? "&" + "utm_term=" + cmpTermEl.value : "";
-  let contentVal = cmpContentEl.value ? "&" + "utm_content=" + cmpContentEl.value : "";
+  let idVal = cmpIdEl.value ? "&utm_id=" + cmpIdEl.value : "";
+  let sourceVal = cmpSourceEl.value ? "&utm_source=" + cmpSourceEl.value : "";
+  let mediumVal = cmpMediumEl.value ? "&utm_medium=" + cmpMediumEl.value : "";
+  let nameVal = cmpNameEl.value ? "&utm_campaign=" + cmpNameEl.value : "";
+  let termVal = cmpTermEl.value ? "&utm_term=" + cmpTermEl.value : "";
+  let contentVal = cmpContentEl.value ? "&utm_content=" + cmpContentEl.value : "";
   let hasParams = idVal || sourceVal || mediumVal || nameVal || termVal || contentVal ? true : false;
   //Form the final link
   theURLel.textContent = `${longLinkEl.value}${!includesQ && hasParams ? "?" : ""}${sourceVal}${mediumVal}${nameVal}${idVal}${termVal}${contentVal}`.replace("?&", "?");
