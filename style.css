@@ -156,8 +156,9 @@ button:hover {
 }
 #final-utm-link {
   padding: 20px 0;
-  /* display: inline; */
+  display: blocks;
   text-align: center;
+  word-break: break-word;
 }
 #display-new-bitly {
   display: block;
